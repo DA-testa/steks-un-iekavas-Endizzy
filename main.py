@@ -17,15 +17,18 @@ def find_mismatch(text):
         if next in ")]}":
             pchar = opening_brackets_stack.pop()
             if not are_matching(pchar, next):
-                return i+1
+                return i+1        
 
-    return "Success"
+
 
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    
-    print(mismatch)
+
+    if not mismatch:
+        print ("Success")
+    else:
+        print(mismatch)
 
 
 if __name__ == "__main__":
